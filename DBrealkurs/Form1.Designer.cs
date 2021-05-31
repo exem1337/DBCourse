@@ -89,6 +89,23 @@ namespace DBrealkurs
             this.tabPage20 = new System.Windows.Forms.TabPage();
             this.dataGridViewListReturner = new System.Windows.Forms.DataGridView();
             this.dataGridTemp = new System.Windows.Forms.DataGridView();
+            this.addDocTypeBTN = new System.Windows.Forms.Button();
+            this.editDocTypeBTN = new System.Windows.Forms.Button();
+            this.deleteDocTypeBTN = new System.Windows.Forms.Button();
+            this.DocTypeTB = new System.Windows.Forms.TextBox();
+            this.DocTypeShortTB = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button4 = new System.Windows.Forms.Button();
+            this.deleteTestBTN = new System.Windows.Forms.Button();
+            this.teorMaterialFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.addTeorMaterialBTN = new System.Windows.Forms.Button();
+            this.deleteTeorMaterialBTN = new System.Windows.Forms.Button();
+            this.addPracMatBTN = new System.Windows.Forms.Button();
+            this.deletePracMatBTN = new System.Windows.Forms.Button();
+            this.pracFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.OpenTestFileBTN = new System.Windows.Forms.Button();
+            this.openTeorFileBTN = new System.Windows.Forms.Button();
+            this.openPractMatBTN = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTest)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -107,6 +124,10 @@ namespace DBrealkurs
             this.tabPage8.SuspendLayout();
             this.tabPage9.SuspendLayout();
             this.tabControl4.SuspendLayout();
+            this.tabPage15.SuspendLayout();
+            this.tabPage18.SuspendLayout();
+            this.tabPage19.SuspendLayout();
+            this.tabPage20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTemp)).BeginInit();
             this.SuspendLayout();
@@ -672,6 +693,9 @@ namespace DBrealkurs
             // 
             // tabPage15
             // 
+            this.tabPage15.Controls.Add(this.openPractMatBTN);
+            this.tabPage15.Controls.Add(this.deletePracMatBTN);
+            this.tabPage15.Controls.Add(this.addPracMatBTN);
             this.tabPage15.Location = new System.Drawing.Point(4, 22);
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.Size = new System.Drawing.Size(457, 481);
@@ -699,6 +723,9 @@ namespace DBrealkurs
             // 
             // tabPage18
             // 
+            this.tabPage18.Controls.Add(this.openTeorFileBTN);
+            this.tabPage18.Controls.Add(this.deleteTeorMaterialBTN);
+            this.tabPage18.Controls.Add(this.addTeorMaterialBTN);
             this.tabPage18.Location = new System.Drawing.Point(4, 22);
             this.tabPage18.Name = "tabPage18";
             this.tabPage18.Size = new System.Drawing.Size(457, 481);
@@ -708,6 +735,9 @@ namespace DBrealkurs
             // 
             // tabPage19
             // 
+            this.tabPage19.Controls.Add(this.OpenTestFileBTN);
+            this.tabPage19.Controls.Add(this.deleteTestBTN);
+            this.tabPage19.Controls.Add(this.button4);
             this.tabPage19.Location = new System.Drawing.Point(4, 22);
             this.tabPage19.Name = "tabPage19";
             this.tabPage19.Size = new System.Drawing.Size(457, 481);
@@ -717,6 +747,11 @@ namespace DBrealkurs
             // 
             // tabPage20
             // 
+            this.tabPage20.Controls.Add(this.DocTypeShortTB);
+            this.tabPage20.Controls.Add(this.DocTypeTB);
+            this.tabPage20.Controls.Add(this.deleteDocTypeBTN);
+            this.tabPage20.Controls.Add(this.editDocTypeBTN);
+            this.tabPage20.Controls.Add(this.addDocTypeBTN);
             this.tabPage20.Location = new System.Drawing.Point(4, 22);
             this.tabPage20.Name = "tabPage20";
             this.tabPage20.Size = new System.Drawing.Size(457, 481);
@@ -739,6 +774,156 @@ namespace DBrealkurs
             this.dataGridTemp.Name = "dataGridTemp";
             this.dataGridTemp.Size = new System.Drawing.Size(291, 268);
             this.dataGridTemp.TabIndex = 3;
+            // 
+            // addDocTypeBTN
+            // 
+            this.addDocTypeBTN.Location = new System.Drawing.Point(4, 82);
+            this.addDocTypeBTN.Name = "addDocTypeBTN";
+            this.addDocTypeBTN.Size = new System.Drawing.Size(100, 23);
+            this.addDocTypeBTN.TabIndex = 0;
+            this.addDocTypeBTN.Text = "Добавить";
+            this.addDocTypeBTN.UseVisualStyleBackColor = true;
+            this.addDocTypeBTN.Click += new System.EventHandler(this.addDocTypeBTN_Click);
+            // 
+            // editDocTypeBTN
+            // 
+            this.editDocTypeBTN.Location = new System.Drawing.Point(4, 111);
+            this.editDocTypeBTN.Name = "editDocTypeBTN";
+            this.editDocTypeBTN.Size = new System.Drawing.Size(100, 23);
+            this.editDocTypeBTN.TabIndex = 1;
+            this.editDocTypeBTN.Text = "Редактировать";
+            this.editDocTypeBTN.UseVisualStyleBackColor = true;
+            this.editDocTypeBTN.Click += new System.EventHandler(this.editDocTypeBTN_Click);
+            // 
+            // deleteDocTypeBTN
+            // 
+            this.deleteDocTypeBTN.Location = new System.Drawing.Point(4, 140);
+            this.deleteDocTypeBTN.Name = "deleteDocTypeBTN";
+            this.deleteDocTypeBTN.Size = new System.Drawing.Size(100, 23);
+            this.deleteDocTypeBTN.TabIndex = 2;
+            this.deleteDocTypeBTN.Text = "Удалить";
+            this.deleteDocTypeBTN.UseVisualStyleBackColor = true;
+            this.deleteDocTypeBTN.Click += new System.EventHandler(this.deleteDocTypeBTN_Click);
+            // 
+            // DocTypeTB
+            // 
+            this.DocTypeTB.Location = new System.Drawing.Point(4, 3);
+            this.DocTypeTB.Name = "DocTypeTB";
+            this.DocTypeTB.Size = new System.Drawing.Size(100, 20);
+            this.DocTypeTB.TabIndex = 3;
+            // 
+            // DocTypeShortTB
+            // 
+            this.DocTypeShortTB.Location = new System.Drawing.Point(4, 29);
+            this.DocTypeShortTB.Multiline = true;
+            this.DocTypeShortTB.Name = "DocTypeShortTB";
+            this.DocTypeShortTB.Size = new System.Drawing.Size(100, 47);
+            this.DocTypeShortTB.TabIndex = 4;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(4, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(113, 30);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "Добавить файл";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // deleteTestBTN
+            // 
+            this.deleteTestBTN.Location = new System.Drawing.Point(4, 39);
+            this.deleteTestBTN.Name = "deleteTestBTN";
+            this.deleteTestBTN.Size = new System.Drawing.Size(113, 30);
+            this.deleteTestBTN.TabIndex = 1;
+            this.deleteTestBTN.Text = "Удалить";
+            this.deleteTestBTN.UseVisualStyleBackColor = true;
+            this.deleteTestBTN.Click += new System.EventHandler(this.deleteTestBTN_Click);
+            // 
+            // teorMaterialFileDialog
+            // 
+            this.teorMaterialFileDialog.FileName = "openFileDialog1";
+            this.teorMaterialFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.teorMaterialFileDialog_FileOk);
+            // 
+            // addTeorMaterialBTN
+            // 
+            this.addTeorMaterialBTN.Location = new System.Drawing.Point(4, 3);
+            this.addTeorMaterialBTN.Name = "addTeorMaterialBTN";
+            this.addTeorMaterialBTN.Size = new System.Drawing.Size(75, 23);
+            this.addTeorMaterialBTN.TabIndex = 0;
+            this.addTeorMaterialBTN.Text = "Добавить";
+            this.addTeorMaterialBTN.UseVisualStyleBackColor = true;
+            this.addTeorMaterialBTN.Click += new System.EventHandler(this.addTeorMaterialBTN_Click);
+            // 
+            // deleteTeorMaterialBTN
+            // 
+            this.deleteTeorMaterialBTN.Location = new System.Drawing.Point(4, 32);
+            this.deleteTeorMaterialBTN.Name = "deleteTeorMaterialBTN";
+            this.deleteTeorMaterialBTN.Size = new System.Drawing.Size(75, 23);
+            this.deleteTeorMaterialBTN.TabIndex = 1;
+            this.deleteTeorMaterialBTN.Text = "Удалить";
+            this.deleteTeorMaterialBTN.UseVisualStyleBackColor = true;
+            this.deleteTeorMaterialBTN.Click += new System.EventHandler(this.deleteTeorMaterialBTN_Click);
+            // 
+            // addPracMatBTN
+            // 
+            this.addPracMatBTN.Location = new System.Drawing.Point(4, 3);
+            this.addPracMatBTN.Name = "addPracMatBTN";
+            this.addPracMatBTN.Size = new System.Drawing.Size(75, 23);
+            this.addPracMatBTN.TabIndex = 0;
+            this.addPracMatBTN.Text = "Добавить";
+            this.addPracMatBTN.UseVisualStyleBackColor = true;
+            this.addPracMatBTN.Click += new System.EventHandler(this.addPracMatBTN_Click);
+            // 
+            // deletePracMatBTN
+            // 
+            this.deletePracMatBTN.Location = new System.Drawing.Point(4, 32);
+            this.deletePracMatBTN.Name = "deletePracMatBTN";
+            this.deletePracMatBTN.Size = new System.Drawing.Size(75, 23);
+            this.deletePracMatBTN.TabIndex = 1;
+            this.deletePracMatBTN.Text = "Удалить";
+            this.deletePracMatBTN.UseVisualStyleBackColor = true;
+            this.deletePracMatBTN.Click += new System.EventHandler(this.deletePracMatBTN_Click);
+            // 
+            // pracFileDialog
+            // 
+            this.pracFileDialog.FileName = "openFileDialog1";
+            this.pracFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.pracFileDialog_FileOk);
+            // 
+            // OpenTestFileBTN
+            // 
+            this.OpenTestFileBTN.Location = new System.Drawing.Point(4, 75);
+            this.OpenTestFileBTN.Name = "OpenTestFileBTN";
+            this.OpenTestFileBTN.Size = new System.Drawing.Size(113, 29);
+            this.OpenTestFileBTN.TabIndex = 2;
+            this.OpenTestFileBTN.Text = "Открыть файл";
+            this.OpenTestFileBTN.UseVisualStyleBackColor = true;
+            this.OpenTestFileBTN.Click += new System.EventHandler(this.OpenTestFileBTN_Click);
+            // 
+            // openTeorFileBTN
+            // 
+            this.openTeorFileBTN.Location = new System.Drawing.Point(4, 61);
+            this.openTeorFileBTN.Name = "openTeorFileBTN";
+            this.openTeorFileBTN.Size = new System.Drawing.Size(75, 24);
+            this.openTeorFileBTN.TabIndex = 3;
+            this.openTeorFileBTN.Text = "Открыть файл";
+            this.openTeorFileBTN.UseVisualStyleBackColor = true;
+            this.openTeorFileBTN.Click += new System.EventHandler(this.openTeorFileBTN_Click);
+            // 
+            // openPractMatBTN
+            // 
+            this.openPractMatBTN.Location = new System.Drawing.Point(4, 61);
+            this.openPractMatBTN.Name = "openPractMatBTN";
+            this.openPractMatBTN.Size = new System.Drawing.Size(75, 24);
+            this.openPractMatBTN.TabIndex = 4;
+            this.openPractMatBTN.Text = "Открыть файл";
+            this.openPractMatBTN.UseVisualStyleBackColor = true;
+            this.openPractMatBTN.Click += new System.EventHandler(this.openPractMatBTN_Click);
             // 
             // Form1
             // 
@@ -774,6 +959,11 @@ namespace DBrealkurs
             this.tabPage8.PerformLayout();
             this.tabPage9.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
+            this.tabPage15.ResumeLayout(false);
+            this.tabPage18.ResumeLayout(false);
+            this.tabPage19.ResumeLayout(false);
+            this.tabPage20.ResumeLayout(false);
+            this.tabPage20.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTemp)).EndInit();
             this.ResumeLayout(false);
@@ -842,6 +1032,23 @@ namespace DBrealkurs
         private System.Windows.Forms.TabPage tabPage18;
         private System.Windows.Forms.TabPage tabPage19;
         private System.Windows.Forms.TabPage tabPage20;
+        private System.Windows.Forms.TextBox DocTypeShortTB;
+        private System.Windows.Forms.TextBox DocTypeTB;
+        private System.Windows.Forms.Button deleteDocTypeBTN;
+        private System.Windows.Forms.Button editDocTypeBTN;
+        private System.Windows.Forms.Button addDocTypeBTN;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button deleteTestBTN;
+        private System.Windows.Forms.OpenFileDialog teorMaterialFileDialog;
+        private System.Windows.Forms.Button deleteTeorMaterialBTN;
+        private System.Windows.Forms.Button addTeorMaterialBTN;
+        private System.Windows.Forms.Button deletePracMatBTN;
+        private System.Windows.Forms.Button addPracMatBTN;
+        private System.Windows.Forms.OpenFileDialog pracFileDialog;
+        private System.Windows.Forms.Button OpenTestFileBTN;
+        private System.Windows.Forms.Button openTeorFileBTN;
+        private System.Windows.Forms.Button openPractMatBTN;
     }
 }
 

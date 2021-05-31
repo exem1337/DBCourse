@@ -1,6 +1,7 @@
 ﻿using System.Data.SqlClient;
 using System.Data;
 using System;
+using System.IO;
 
 namespace DBrealkurs
 {
@@ -63,6 +64,20 @@ namespace DBrealkurs
             sqlData.Fill(dataSet);
             return dataSet;
         }
+        public string sqlExecute(string query)
+        {
+          
+            try
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+              
+                return e.ToString();
+            }
+        } //любой запрос
 
         #region добавление
         public string addUser(string lastName, string name, string surName)
@@ -139,22 +154,62 @@ namespace DBrealkurs
             }
         }
 
-        #endregion
-
-        public string sqlExecute(string query)
+        public string addDocType(string name, string shortName)
         {
-          
             try
             {
-                SqlCommand command = new SqlCommand(query, connection);
+                SqlCommand command = new SqlCommand($"INSERT INTO Тип_документа (Наименование, [Кр._Наименование]) VALUES ('{name}', '{shortName}')", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
             {
-              
+
                 return e.ToString();
             }
-        } //любой запрос
+        }
+
+        public string addTestFile(string file)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"INSERT INTO Тесты (файл) VALUES ('{file}')", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+
+                return e.ToString();
+            }
+        }
+
+        public string addTeorMatFile(string file)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"INSERT INTO Теор_материал (Файл) VALUES ('{file}')", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+
+                return e.ToString();
+            }
+        }
+
+        public string addPracMatFile(string file)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"INSERT INTO Материал_практ (Файл) VALUES ('{file}')", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+
+                return e.ToString();
+            }
+        }
+        #endregion
 
         #region Удаление
         public string deleteCourse(int courseID)
@@ -221,6 +276,58 @@ namespace DBrealkurs
                 return e.ToString();
             }
         }
+
+        public string deleteDocType(int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"DELETE FROM тип_документа WHERE typeID = {id}", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+
+        public string deleteTest(int ID)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"DELETE FROM Тесты WHERE testID = {ID}", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+
+        public string deleteTeorMat(int ID)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"DELETE FROM Теор_материал WHERE teorMaterialID = {ID}", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        
+        public string deletePractMat(int ID)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"DELETE FROM Материал_практ WHERE prMaterialID = {ID}", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
         #endregion
 
         #region update
@@ -257,6 +364,20 @@ namespace DBrealkurs
             try
             {
                 SqlCommand command = new SqlCommand($"UPDATE Курс SET Продолжительность = {hours}, [Требуемый уровень] = {requiredSkill}, Название = '{courseName}', [Дата начала] = '{beginDate}', [Дата окончания] = '{endDate}' WHERE ID = {id};", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+
+                return e.ToString();
+            }
+        }
+
+        public string updateDocType(string Name, string shortName, int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"UPDATE Тип_документа SET Наименование = '{Name}', [Кр._наименование] = '{shortName}' WHERE typeID = {id};", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
